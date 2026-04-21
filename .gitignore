@@ -1,0 +1,18 @@
+# VS Code
+.vscode/
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+
+# Compilados / binarios
+bin/
+out/
+target/
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
