@@ -11,7 +11,7 @@ public class ScrumMasterAgent extends Agent {
     protected void setup() {
         System.out.println("--- [SCRUM MASTER] --- Agente de monitoreo activo.");
 
-        // 1. Comportamiento para recibir reportes de TaskAgents y Developers
+        // Comportamiento para recibir reportes de TaskAgents y Developers
         addBehaviour(new CyclicBehaviour(this) {
             public void action() {
                 ACLMessage msg = receive();
@@ -19,11 +19,11 @@ public class ScrumMasterAgent extends Agent {
                     String sender = msg.getSender().getLocalName();
                     String content = msg.getContent();
 
-                    // Auditoría de logs (Logging centralizado)
+                    // Auditoría de logs (logging centralizado)
                     System.out.println("\n[AUDITORÍA] Mensaje de: " + sender);
                     System.out.println("[CONTENIDO] " + content);
 
-                    // Lógica de monitoreo: Detección de bloqueos
+                    // Lógica de monitoreo: detección de bloqueos
                     if (content.contains("status=NO_ASSIGNMENT")) {
                         System.err.println("!!! ALERTA SCRUM MASTER: Tarea bloqueada. Ningún Developer aceptó.");
                     } else if (content.contains("status=IN_PROGRESS")) {
@@ -35,7 +35,7 @@ public class ScrumMasterAgent extends Agent {
             }
         });
 
-        // 2. Comportamiento para auditar quiénes están en las Páginas Amarillas cada 10 seg.
+        // Comportamiento para auditar quiénes están en las páginas amarillas cada 10 seg
         addBehaviour(new TickerBehaviour(this, 10000) {
             protected void onTick() {
                 auditarDesarrolladores();
