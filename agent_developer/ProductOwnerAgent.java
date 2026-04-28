@@ -9,7 +9,7 @@ import jade.proto.ContractNetInitiator;
 
 import java.util.*;
 
-public class TaskCNPInitiator extends Agent {
+public class ProductOwnerAgent extends Agent {
 
     private int taskCounter = 1;
 

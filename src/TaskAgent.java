@@ -39,7 +39,7 @@ public class TaskAgent extends Agent {
                 cfp.setProtocol(FIPANames.InteractionProtocol.FIPA_CONTRACT_NET);
                 cfp.setReplyByDate(new Date(System.currentTimeMillis() + 3000));
 
-                addBehaviour(new TaskCNPInitiator(myAgent, cfp));
+                addBehaviour(new jade.proto.ContractNetInitiator(myAgent, cfp));
             }
         };
         addBehaviour(ticker);
